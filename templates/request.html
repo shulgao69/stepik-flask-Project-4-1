@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block container %}
+<main class="container mt-5">
+  <div class="col-12 col-sm-10 col-lg-6 offset-lg-3 offset-sm-1">
+    <form method="POST" action="/request/" class="card mb-5">
+      {{ form.csrf_token }}
+      <div class="card-body text-center pt-5">
+        <h1 class="h3 card-title mt-4 mb-2">Подбор преподавателя</h1>
+        <p class="px-5 mb-3">Напишите, что вам нужно и&nbsp;мы&nbsp;подберем отличных&nbsp;ребят</p>
+      </div>
+
+
+      <div class="card-body mx-3 mb-5">
+        <div class="row mb-5">
+
+          <div class="col form-check">
+            {{ form.goal_request.label(class="form-check-label mb-3") }}
+            {{ form.goal_request(class="form-check-input list-unstyled pl-3") }}
+          </div>
+
+           <div class="col form-check">
+            {{ form.time_request.label(class="form-check-label mb-3") }}
+            {{ form.time_request(class="form-check-input list-unstyled pl-3") }}
+          </div>
+
+        </div>
+      </div>
+
+      <div class="card-body mx-3 mt-5">
+        {{ form.name_request.label(class="mb-1 mt-2") }}
+        {{ form.name_request(class="form-control") }}
+        {{ form.phone_request.label(class="mb-1 mt-2") }}
+        {{ form.phone_request(class="form-control") }}
+        <input type="submit" class="btn btn-primary mt-4 mb-2" value="Найдите мне преподавателя">
+      </div>
+
+    </form>
+  </div>
+</main>
+{% endblock %}
