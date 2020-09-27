@@ -31,11 +31,10 @@ class Day(db.Model):
     day_value_ru = db.Column(db.String, nullable=False)
 
 
-#Модель Ассоциативная таблица Преподаватели-Цели
+# Модель Ассоциативная таблица Преподаватели-Цели
 teachers_goals_association = db.Table('teachers_goals', db.metadata,
     db.Column('teacher_id', db.Integer, db.ForeignKey('teachers.id')),
-    db.Column('goal_id', db.Integer, db.ForeignKey('goals.id'))
-)
+    db.Column('goal_id', db.Integer, db.ForeignKey('goals.id')))
 
 
 # Модель Цели
